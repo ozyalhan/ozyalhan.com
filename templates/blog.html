@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+<div class="container">
+
+    {% if blog %}
+    <h4>{{blog.title}}</h4>
+    <small>Author: {{blog.author}} | Publish Date: {{blog.publish_date}}</small>
+    <hr>
+    {{blog.content | safe}}
+
+
+
+
+
+    {% else %}
+    <div class="alert alert-warning">No post wtih this name.</div>
+    {% endif %}
+
+
+
+
+
+</div>
+
+{% endblock  %}

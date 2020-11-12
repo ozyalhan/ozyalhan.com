@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+<br><br>
+<div class="container">
+    <div class="jumbotron text-center">
+
+        <h3 class="p-2 mb-2 bg-info text-white"><strong>Feel Free For Contact!😊</strong></h3>
+        <hr>
+        <br>
+        <h5 class="text-dark">You can send email anytime you want <a
+                href="mailto:ozguryasaralhan@gmail.com?subject=This%20mail%20from%20ozyalhan.com">ozguryasaralhan@gmail.com</a>
+        </h5>
+        <br>
+        <h5 class=" text-primary"><strong>Social Media Links</strong></h5>
+        <div class="social-icons">
+            <a class="social-icon" href="https://www.linkedin.com/in/ozyalhan"><i
+                    class="devicon-linkedin-plain"></i></a>
+            <a class="social-icon" href="https://github.com/ozyalhan"><i class="devicon-github-plain"></i></a>
+            <a class="social-icon" href="https://twitter.com/ozy_csfb"><i class="devicon-twitter-plain"></i></a>
+            <a class="social-icon" href="https://www.facebook.com/ozgur.alhan/"><i
+                    class="devicon-facebook-plain"></i></a>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+{% endblock  %}
+
+
+
+
+
+<!--
+
+{% if success %}
+<p>Thank you for your message. We'll get back to you shortly.</p>
+
+{% else %}
+{% for message in form.name.errors %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.email.errors %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.subject.errors %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.message.errors %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+
+<form action="{{ url_for('contact') }}" method=post>
+
+    {{ form.name.label }}
+    {{ form.name }}
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    {{ form.subject.label }}
+    {{ form.subject }}
+
+    {{ form.message.label }}
+    {{ form.message }}
+
+    {{ form.submit }}
+</form>
+
+{% endif %}
+
+
+
+
+-->

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<div class="container">
+    <h3>Diary Posts</h3>
+    <hr>
+
+    {% if diaries %}
+
+    <form action="/search-diary" method="POST">
+        <input type="text" name="keyword" class="input-sm" maxlength="64" placeholder="Search">
+        <button type="submit" class="btn btn-danger">Search</button>
+    </form>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publish Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for diary in  diaries %}
+            <tr>
+                <td><a href="/diary/{{diary.id}}">{{diary.title}}</a></td>
+                <td>{{diary.author}}</td>
+                <td>{{diary.publish_date}}</td>
+            </tr>
+            {% endfor %}
+            <hr>
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-danger">Unfortunately any diary posts here.</div>
+    {% endif %}
+</div>
+
+{% endblock %}

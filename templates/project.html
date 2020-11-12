@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+<div class="container">
+
+    {% if project %}
+    <h4>{{project.title}}</h4>
+    <small>Author: {{project.author}} | Publish Date: {{project.publish_date}}</small>
+    <hr>
+    {{project.content | safe}}
+
+
+
+
+
+    {% else %}
+    <div class="alert alert-warning">No post wtih this name.</div>
+    {% endif %}
+
+
+
+
+
+</div>
+
+{% endblock  %}

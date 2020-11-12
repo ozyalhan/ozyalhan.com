@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<div class="container">
+    <h3>Project Posts</h3>
+    <hr>
+
+    {% if projects %}
+
+    <form action="/search-project" method="POST">
+        <input type="text" name="keyword" class="input-sm" maxlength="64" placeholder="Search">
+        <button type="submit" class="btn btn-danger">Search</button>
+    </form>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publish Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in  projects %}
+            <tr>
+                <td><a href="/project/{{project.id}}">{{project.title}}</a></td>
+                <td>{{project.author}}</td>
+                <td>{{project.publish_date}}</td>
+            </tr>
+            {% endfor %}
+            <hr>
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-danger">Unfortunately any project posts here.</div>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <h3>Register</h3>
+    <hr>
+    {% from "includes/formhelpers.html" import render_field %}
+    <form method=post>
+        <dl>
+            {{ render_field(form.fullname) }}
+            {{ render_field(form.username) }}
+            {{ render_field(form.email) }}
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>
+            {{ render_field(form.password) }}
+            {{ render_field(form.confirm) }}
+        </dl>
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
+</div>
+
+{% endblock  %}
