@@ -219,41 +219,21 @@ def addblog():
 
 @ app.route("/dashboard")
 @login_required
-def dashboard(): < br > <br > <br > <br > <br >
+def dashboard():
 
+    # get db values ... it can be empty string if not author only will be ours
 
-<div class = "container" >
-   <div class = "jumbotron text-center" >
-        <h3 class = "p-2 mb-2 bg-info text-white" > <strong > Welcome < /strong > !</h3 >
-        <hr >
-        <h4 class = "text-dark" > Ozgur Yasar Alhan is an Electronics and Communication Engineer. < /h4 >
-        <br >
-        <h5 class = "text-dark" > He loves coding, cleaning, fixing home stuffs, making keep alive old computers &
-        electronics,
-           and creating automated systems. < /h5 >
-        <br >
-        <h5 class = "text-primary" > You can find about him < strong > everything < /strong > in here.😊< /h5 >
-    </div >
-</div >
-</div >
+    # blog_posts = Blogs.query.all()
 
+    # blog_posts = Blogs.query.filter_by(author=session["username"]).first()
 
+    blog_posts = Blogs.query.filter_by(author=session["username"]).all()
+    diary_posts = Diaries.query.filter_by(author=session["username"]).all()
+    project_posts = Projects.query.filter_by(author=session["username"]).all()
 
-{ % endblock  % }
+    # blog_posts = Blogs.querry.all()
 
-# get db values ... it can be empty string if not author only will be ours
-
-# blog_posts = Blogs.query.all()
-
-# blog_posts = Blogs.query.filter_by(author=session["username"]).first()
-
-blog_posts = Blogs.query.filter_by(author=session["username"]).all()
- diary_posts = Diaries.query.filter_by(author=session["username"]).all()
-  project_posts = Projects.query.filter_by(author=session["username"]).all()
-
-   # blog_posts = Blogs.querry.all()
-
-   if blog_posts != "" or diary_posts != "" or project_posts != "":
+    if blog_posts != "" or diary_posts != "" or project_posts != "":
 
         # For Debugging only
         # flash("{}".format(blog_posts), "success")
