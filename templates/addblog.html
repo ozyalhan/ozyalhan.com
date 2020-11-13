@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+
+
+{% block body %}
+
+<div class="container">
+    <h3>Blog Post</h3>
+    <hr>
+
+    {% from "includes/formhelpers.html" import render_field %}
+
+    <form method="post">
+
+        {{ render_field(form.title,class="form-control")}}
+        {{ render_field(form.content,class="form-control")}}
+
+        <button type="submit" class="btn btn-success w-100 p-3">Save</button>
+
+    </form>
+</div>
+
+{% endblock  %}
